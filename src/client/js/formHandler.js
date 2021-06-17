@@ -2,6 +2,7 @@ import bodyParser from "body-parser";
 
 const APIBaseURL = "https://api.meaningcloud.com/sentiment-2.1";
 const mcAPIKey = process.env.API_KEY;
+import { checkForName } from './nameChecker'
 
 const sentimentAnalysis = async inputURL => {
     const res = await fetch(`${APIBaseURL}?key=${mcAPIKey}&lang=en&url=${inputURL}`);
@@ -15,9 +16,9 @@ const sentimentAnalysis = async inputURL => {
     }
 };
 
-const analysisResults = async (url = "http://localhost:8555/input", data = {}) => {
+const analysisResults = async (url = '', data = {}) => {
     console.log(':::Form Submitted:::', data);
-    const response = await fetch("http://localhost:8555/input", {
+    const response = await fetch("http://localhost:8555/inputfield", {
         method: 'POST',
         credentials: 'same-origin',
         mode: 'cors',
@@ -39,6 +40,7 @@ function handleSubmit(event) {
 
     // check what text was put into the form field
     let formText = document.getElementById('name').value
+    console.log(formText);
     if(Client.checkForName(formText)) {
         postResults(formText).then(res => {
             document.getElementById('score-tag').innerHTML = `score_tag: ${res.score_tag}`;

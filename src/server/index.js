@@ -5,6 +5,7 @@ const mcAPIKey = process.env.API_KEY;
 console.log(`Meaning Cloud API Key = ${mcAPIKey}`);
 
 const path = require("path");
+const fetch = require('node-fetch');
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -26,20 +27,21 @@ app.use(
 );
 
 app.use(express.static("dist"));
-const port = 8555;
+
 
 console.log(JSON.stringify(mockAPIResponse));
 
 console.log(__dirname);
 
-app.post("/input", async (req, res) => {
-  console.log("req====+>", req.body);
+app.post('/inputfield', async (req, res) => {
+  console.log('req====+>', req.body);
   const result = await fetch(
     `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`
-  );
+  )
   try {
     console.log(result);
     const response = await result.json();
+
     res.send(response);
     console.log(response);
   } catch (error) {
@@ -53,6 +55,7 @@ app.get("/", function (req, res) {
 });
 
 // designates what port the app will listen to for incoming requests
+const port = 8555;
 const server = app.listen(port, () =>
   console.log(`Server listening on localhost:${port}`)
 );
