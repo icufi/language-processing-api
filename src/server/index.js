@@ -1,3 +1,9 @@
+const dotenv = require('dotenv');
+dotenv.config();
+
+const mcAPIKey = process.env.API_KEY;
+console.log(`Meaning Cloud API Key = ${mcAPIKey}`);
+
 var path = require("path");
 const express = require("express");
 const mockAPIResponse = require("./mockAPI.js");
@@ -21,3 +27,4 @@ app.listen(8081, function () {
 app.get("/test", function (req, res) {
   res.send(mockAPIResponse);
 });
+
