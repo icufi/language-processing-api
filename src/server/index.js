@@ -1,21 +1,12 @@
 const dotenv = require("dotenv");
 dotenv.config();
-
 const mcAPIKey = process.env.API_KEY;
-console.log(`Meaning Cloud API Key = ${mcAPIKey}`);
 
 const path = require("path");
-const fetch = require('node-fetch');
+const fetch = require("node-fetch");
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const mockAPIResponse = require("./mockAPI.js");
-
-let json = {
-  title: "json test response",
-  message: "test message",
-  time: "current time",
-};
 
 const app = express();
 app.use(cors());
@@ -28,38 +19,29 @@ app.use(
 
 app.use(express.static("dist"));
 
-
-console.log(JSON.stringify(mockAPIResponse));
-
 console.log(__dirname);
 
-app.post('/inputfield', async (req, res) => {
-  console.log('req====+>', req.body);
-  const result = await fetch(
-    `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`
-  )
-  try {
-    console.log(result);
-    const response = await result.json();
+const port = 8555;
+const server = app.listen(port, () =>
+  console.log(`Server available at localhost:${port}`)
+);
 
-    res.send(response);
-    console.log(response);
+app.post("/inputfield", async (req, res) => {
+  const testText = req.body.formText;
+  console.log(testText);
+  const analysisResult = await fetch(
+    `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`,
+    { method: "POST" }
+  );
+  try {
+    const result = await analysisResult.json();
+    console.log(result);
+    res.send(result);
   } catch (error) {
     console.log("error", error);
   }
 });
 
 app.get("/", function (req, res) {
-  res.sendFile("dist/index.html");
-  // res.sendFile(path.resolve("src/client/views/index.html"));
-});
-
-// designates what port the app will listen to for incoming requests
-const port = 8555;
-const server = app.listen(port, () =>
-  console.log(`Server listening on localhost:${port}`)
-);
-
-app.get("/test", function (req, res) {
-  res.send(mockAPIResponse);
+  res.sendFile(path.resolve("dist/index.html"));
 });
