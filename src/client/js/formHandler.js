@@ -1,10 +1,8 @@
-import fetch from "node-fetch";
+// import fetch from "node-fetch";
 import { checkForName } from "./nameChecker";
 
 
-// let elemTest = document.getElementById("score_tag");
-// elemTest.innerHTML = 'hi';
-//     console.log(elemTest,'yummy');1
+
 
 const handleSubmit = async event => {
   event.preventDefault();
@@ -14,24 +12,21 @@ const handleSubmit = async event => {
     const api_url = `/textanalysis/${formData}`;
     const res = await fetch(api_url);
     const json = await res.json()
-    console.log(json.score_tag);
-    // console.log(json);
-    const elemTest = document.getElementById('score_tag');
-    console.log(elemTest,'happy');
-    document.getElementById(
-      "score_tag"
-    ).innerHTML = `Score: ${json.score_tag}`;
-    document.getElementById("model").innerHTML = `Score: ${json.model}`;
+    console.log(json);
     document.getElementById(
       "agreement"
-    ).innerHTML = `Score: ${json.agreement}`;
+    ).innerHTML = `Agreement Score: ${json.agreement}`;
+    document.getElementById("confidence").innerHTML = `Confidence Score: ${json.confidence}`;
     document.getElementById(
-      "subjectivity"
-    ).innerHTML = `Score: ${json.subjectivity}`;
+      "irony"
+    ).innerHTML = `Irony Score: ${json.irony}`;
     document.getElementById(
-      "confidence"
-    ).innerHTML = `Score: ${json.confidence}`;
-    document.getElementById("irony").innerHTML = `Score: ${json.irony}`;
+      "model"
+    ).innerHTML = `Model Type: ${json.model}`;
+    document.getElementById(
+      "scoretag"
+    ).innerHTML = `Score Tag: ${json.score_tag}`;
+    
 
 
   } else {
