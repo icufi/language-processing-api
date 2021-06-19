@@ -24,25 +24,6 @@ const server = app.listen(port, () =>
   console.log(`Server available at localhost:${port}`)
 );
 
-// const analysisResult = async (baseURL, APIKey, lang) => {
-//   function testURL (req, res) {
-//     let formURL = req.body.URL;
-//     return formURL;
-
-//   };
-//   let APITestURL = `${baseURL}${APIKey}${formURL}${lang}`;
-//   console.log(APITestURL);
-//   const res = await fetch(APITestURL);
-//   try {
-//     const data = await res.json();
-//     console.log(data);
-//     return data;
-//   } catch (error) {
-//     console.log("error", error);
-//   }
-// };
-
-// app.post("/inputfield", analysisResult);
 
 app.get("/", function (req, res) {
   res.sendFile(path.resolve("dist/index.html"));
@@ -62,19 +43,3 @@ app.get('/textanalysis/*', async (req, res) => {
 
 
 
-
-// => {
-//   const testURL = req.body.formText;
-//   console.log(testURL, 'happy');
-//   const analysisResult = await fetch(
-//     `https://api.meaningcloud.com/sentiment-2.1?key=${process.env.API_KEY}&url=${req.body.url}&lang=en`,
-//     { method: "POST" }
-//   );
-//   try {
-//     const result = await analysisResult.json();
-//     console.log(result);
-//     res.send(result);
-//   } catch (error) {
-//     console.log("error", error);
-//   }
-// });
