@@ -7,6 +7,7 @@ import { checkForName } from "./nameChecker";
 const handleSubmit = async event => {
   event.preventDefault();
   let formData = document.getElementById("name").value;
+ 
 
   if (checkForName(formData)) {
     const api_url = `/textanalysis/${formData}`;
@@ -26,7 +27,7 @@ const handleSubmit = async event => {
     document.getElementById(
       "scoretag"
     ).innerHTML = `Score Tag: ${json.score_tag}`;
-    
+
 
 
   } else {
