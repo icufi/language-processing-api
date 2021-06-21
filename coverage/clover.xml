@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1624239638745" clover="3.2.0">
-  <project timestamp="1624239638746" name="All files">
+<coverage generated="1624241739563" clover="3.2.0">
+  <project timestamp="1624241739563" name="All files">
     <metrics statements="18" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="2" elements="22" coveredelements="8" complexity="0" loc="18" ncloc="18" packages="1" files="2" classes="2"/>
     <file name="formHandler.js" path="C:\Users\icufi\Dropbox\Coding\Udacity\Projects\Project 4\evaluate-news-nlp\src\client\js\formHandler.js">
       <metrics statements="14" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="1"/>

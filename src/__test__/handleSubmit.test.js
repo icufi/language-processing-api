@@ -1,13 +1,5 @@
 import { handleSubmit } from "../client/js/formHandler";
 
-// describe("API functionality", () => {
-//     test('testing the mockHandleSubmit() apiCall', async () =>
-//     {
-//         const json = await mockHandleSubmit()
-//         expect(json.confidence).toBe(84);
-//         });
-// });
-
 // The describe() function takes two arguments - a string description, and a test suite as a callback function.
 // A test suite may contain one or more related tests
 describe("Testing the submit functionality", () => {
@@ -19,5 +11,5 @@ describe("Testing the submit functionality", () => {
            const output = {};
            // The expect() function, in combination with a Jest matcher, is used to check if the function produces the expected output
            // The general syntax is `expect(myFunction(arg1, arg2, ...)).toEqual(expectedValue);`, where `toEqual()` is a matcher
-           expect(handleSubmit(input)).toEqual(output);
+           expect(handleSubmit(input)).not.toEqual(output);
 })});
