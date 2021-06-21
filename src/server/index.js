@@ -15,32 +15,28 @@ app.use(
   })
 );
 app.use(express.static("dist"));
-
+//API key and port variables
 const APIKey = `${process.env.API_KEY}`;
-
-
 const port = 8555;
+
+//start server
 const server = app.listen(port, () =>
   console.log(`Server available at localhost:${port}`)
 );
 
-
+//index page get request
 app.get("/", function (req, res) {
   res.sendFile(path.resolve("dist/index.html"));
 });
 
-app.get('/textanalysis/*', async (req, res) => {
-  console.log(req.params);
-  const formData = req.params[0]
-  console.log(formData);
+//API call
+app.get("/textanalysis/*", async (req, res) => {
+  //receives user input url as param
+  const formData = req.params[0];
   const api_url = `https://api.meaningcloud.com/sentiment-2.1?key=${APIKey}&url=${formData}&lang=en`;
-  console.log(api_url);
+  //calls API
   const api_response = await fetch(api_url);
   const json = await api_response.json();
-  // console.log(json);
+  // returns response
   res.json(json);
 });
-
-
-
-

@@ -1,20 +1,21 @@
-// import fetch from "node-fetch";
+
 import { checkForName } from "./nameChecker";
 
 
-
+//client side code that receives input
 
 const handleSubmit = async event => {
   event.preventDefault();
   let formData = document.getElementById("name").value;
 
-
+//check if valid url
   if (checkForName(formData)) {
-    console.log(formData)
+
+    //get request with input url as param
     const api_url = `/textanalysis/${formData}`;
     const res = await fetch(api_url);
     const json = await res.json()
-    console.log(json);
+//update UI with response object
     document.getElementById(
       "agreement"
     ).innerHTML = `Agreement Score: ${json.agreement}`;
@@ -32,12 +33,10 @@ const handleSubmit = async event => {
 
 
   } else {
+    //alert if url input is not valid url
     alert("Please enter a valid URL to continue.");
   }
 };
 
-const APICall = async => {
-
-}
 
 export { handleSubmit };
