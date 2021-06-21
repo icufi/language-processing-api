@@ -1,23 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1624212870651" clover="3.2.0">
-  <project timestamp="1624212870651" name="All files">
-    <metrics statements="11" coveredstatements="8" conditionals="2" coveredconditionals="1" methods="2" coveredmethods="2" elements="15" coveredelements="11" complexity="0" loc="11" ncloc="11" packages="1" files="2" classes="2"/>
-    <file name="mockFormHandler.js" path="C:\Users\icufi\Dropbox\Coding\Udacity\Projects\Project 4\evaluate-news-nlp\src\client\js\mockFormHandler.js">
-      <metrics statements="7" coveredstatements="4" conditionals="2" coveredconditionals="1" methods="1" coveredmethods="1"/>
-      <line num="5" count="1" type="stmt"/>
-      <line num="7" count="1" type="cond" truecount="1" falsecount="1"/>
+<coverage generated="1624239638745" clover="3.2.0">
+  <project timestamp="1624239638746" name="All files">
+    <metrics statements="18" coveredstatements="6" conditionals="2" coveredconditionals="0" methods="2" coveredmethods="2" elements="22" coveredelements="8" complexity="0" loc="18" ncloc="18" packages="1" files="2" classes="2"/>
+    <file name="formHandler.js" path="C:\Users\icufi\Dropbox\Coding\Udacity\Projects\Project 4\evaluate-news-nlp\src\client\js\formHandler.js">
+      <metrics statements="14" coveredstatements="2" conditionals="2" coveredconditionals="0" methods="1" coveredmethods="1"/>
+      <line num="7" count="1" type="stmt"/>
       <line num="8" count="1" type="stmt"/>
-      <line num="9" count="1" type="stmt"/>
-      <line num="10" count="0" type="stmt"/>
-      <line num="11" count="0" type="stmt"/>
+      <line num="9" count="0" type="stmt"/>
+      <line num="12" count="0" type="cond" truecount="0" falsecount="2"/>
       <line num="13" count="0" type="stmt"/>
+      <line num="14" count="0" type="stmt"/>
+      <line num="15" count="0" type="stmt"/>
+      <line num="16" count="0" type="stmt"/>
+      <line num="17" count="0" type="stmt"/>
+      <line num="20" count="0" type="stmt"/>
+      <line num="21" count="0" type="stmt"/>
+      <line num="24" count="0" type="stmt"/>
+      <line num="27" count="0" type="stmt"/>
+      <line num="34" count="0" type="stmt"/>
     </file>
     <file name="nameChecker.js" path="C:\Users\icufi\Dropbox\Coding\Udacity\Projects\Project 4\evaluate-news-nlp\src\client\js\nameChecker.js">
       <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="2" type="stmt"/>
-      <line num="2" count="2" type="stmt"/>
-      <line num="3" count="2" type="stmt"/>
-      <line num="4" count="2" type="stmt"/>
+      <line num="2" count="1" type="stmt"/>
+      <line num="3" count="1" type="stmt"/>
+      <line num="4" count="1" type="stmt"/>
     </file>
   </project>
 </coverage>
