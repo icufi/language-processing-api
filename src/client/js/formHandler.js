@@ -7,7 +7,7 @@ import { checkForName } from "./nameChecker";
 const handleSubmit = async event => {
   event.preventDefault();
   let formData = document.getElementById("name").value;
- 
+
 
   if (checkForName(formData)) {
     console.log(formData)
@@ -36,7 +36,8 @@ const handleSubmit = async event => {
   }
 };
 
+const APICall = async => {
 
-
+}
 
 export { handleSubmit };
