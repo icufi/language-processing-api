@@ -9,6 +9,7 @@ const handleSubmit = async event => {
   let formData = document.getElementById("name").value;
 
   if (checkForName(formData)) {
+    console.log(formData)
     const api_url = `/textanalysis/${formData}`;
     const res = await fetch(api_url);
     const json = await res.json()
@@ -26,7 +27,7 @@ const handleSubmit = async event => {
     document.getElementById(
       "scoretag"
     ).innerHTML = `Score Tag: ${json.score_tag}`;
-    
+
 
 
   } else {

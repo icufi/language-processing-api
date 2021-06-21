@@ -33,10 +33,11 @@ app.get('/textanalysis/*', async (req, res) => {
   console.log(req.params);
   const formData = req.params[0]
   console.log(formData);
-  const api_url = `https://api.meaningcloud.com/sentiment-2.1?key=${APIKey}&url=${formData}&lang=en`
+  const api_url = `https://api.meaningcloud.com/sentiment-2.1?key=${APIKey}&url=${formData}&lang=en`;
+  console.log(api_url);
   const api_response = await fetch(api_url);
   const json = await api_response.json();
-  console.log(json);
+  // console.log(json);
   res.json(json);
 });
 
