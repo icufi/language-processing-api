@@ -4,7 +4,7 @@ import { checkForName } from "./nameChecker";
 
 //client side code that receives input
 
-const handleSubmit = async event => {
+const handleSubmit = event => {
   event.preventDefault();
   let formData = document.getElementById("name").value;
   callAPI(formData);
@@ -17,7 +17,7 @@ const callAPI = async formData => {
 if (checkForName(formData)) {
 
   //get request with input url as param
-  const api_url = `/textanalysis/${formData}`;
+  const api_url = `http://localhost:8555/textanalysis/${formData}`;
   const res = await fetch(api_url);
   const json = await res.json()
 //update UI with response object
