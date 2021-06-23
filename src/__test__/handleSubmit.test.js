@@ -7,7 +7,7 @@ describe("Testing the submit functionality", () => {
     // The test() function has two arguments - a string description, and an actual test as a callback function.
     test("Testing the handleSubmit() function", () => {
            // Define the input for the function, if any, in the form of variables/array
-           const input = 'http://www.hotdogs.com';
+           const input = 'https://www.carwow.co.uk/volvo/xc40';
            // Define the expected output, if any, in the form of variables/array
            const output = {};
            // The expect() function, in combination with a Jest matcher, is used to check if the function produces the expected output

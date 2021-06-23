@@ -45,3 +45,4 @@ if (checkForName(formData)) {
 
 
 export { handleSubmit };
+export { callAPI };
