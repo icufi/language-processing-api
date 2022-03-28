@@ -1,11 +1,3 @@
-# Udacity Project 4
+# Overview
 
-This project is a single page website that calls the Meaning Cloud Natural Language Processing API to analyze the text of a third party website input by the user.
-
-## User Input
-
-Users are requested to submit a valid URL for text analysis into the text field.
-
-## API Return
-
-The current API called returns a sentiment analysis in the form of text trait scores for "irony", "confidence", "agreement", etc. Scores are returned for the text analyzed in the form results section of the webpage.
+This app calls the Meaning Cloud Natural Language Processing API to analyze text for sentiment from a website selected by the user. Users are requested to enter a valid URL which is then relayed to the language processing API and a return from the API is displayed on the page in a scores section.  The API grades the text at the user selected website for trait scores such as "irony", "confidence" or "agreement" etc.
